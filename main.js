@@ -109,7 +109,18 @@ if (legalLinkMobile) legalLinkMobile.onclick = openLegal;
 
     initModal();
     initCanvasAnimation();
-    injectInFeedAd(); 
+    injectInFeedAd();
+
+    const hash = window.location.hash.substring(1);
+    if (hash && hash !== "admin-stats") {
+        const targetArticle = document.querySelector(`.article-item[data-slug="${hash}"]`);
+        if (targetArticle) {
+            setTimeout(() => targetArticle.click(), 500);
+            console.log(`[Phant_m] Accès direct au slug : ${hash}`);
+        }
+    } else if (hash === "admin-stats") {
+        console.log("%c[Phant_m] Mode Admin activé. Tapez 'phantmStats' pour voir les données.", "color: orange;");
+    }
 });
 
 function initModal() {
