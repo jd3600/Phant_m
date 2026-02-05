@@ -166,3 +166,21 @@ function initCanvasAnimation() {
         });
     }, 50);
 }
+
+// Système de monitoring Phant_m
+console.log("%c Phant_m Core v1.0 - Monitoring ", "background: #222; color: #bada55; font-size: 20px;");
+
+const stats = {
+    visites: Math.floor(Math.random() * 100), // Simule des datas
+    session: new Date().toLocaleTimeString(),
+    currentSlug: window.location.pathname
+};
+
+console.table(stats); // Affiche un beau tableau dans ta console
+
+// Liste tes articles pour vérifier les Slugs
+const articles = document.querySelectorAll('.card'); // Ou la classe de tes blocs
+console.log("Articles détectés sur la page :");
+articles.forEach((art, index) => {
+    console.log(`ID: ${index} | Titre: ${art.querySelector('h3')?.innerText || 'Sans titre'}`);
+});
