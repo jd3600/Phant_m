@@ -40,20 +40,39 @@ function openLegalModal() {
 // --- 4. INJECTION PUB NATIVE (LISTE) ---
 const injectInFeedAd = () => {
     const articles = document.querySelectorAll('.article-item');
-    if (articles.length >= 2) {
+    
+    // 1. On prépare notre catalogue de pubs
+    const adCatalogue = [
+        { title: "Propulsez votre créativité", author: "Phant_m Lab", url: "https://google.com" },
+        { title: "L'Algèbre pour tous", author: "EduMath", url: "https://google.com" },
+        { title: "Rejoignez le Baron Nosferatu", author: "Community", url: "https://google.com" },
+        { title: "Design Minimaliste : Le Guide", author: "ArtStudio", url: "https://google.com" }
+    ];
+
+    let adCounter = 0; // Pour savoir quelle pub du catalogue on prend
+
+    // 2. On boucle tous les 3 articles
+    for (let i = 2; i < articles.length; i += 3) {
+        // On sélectionne une pub (on recommence au début du catalogue si on arrive à la fin)
+        const currentAd = adCatalogue[adCounter % adCatalogue.length];
+
         const adCard = document.createElement('div');
-        adCard.className = 'article-item'; 
+        adCard.className = 'article-item ad-in-feed'; 
         adCard.innerHTML = `
-            <div class="article-meta">05 Février 2026</div>
-            <div class="article-title">Découvrez Phant_m</div>
-            <div class="article-author">Admin</div>
+            <div class="article-meta">SPONSORISÉ</div>
+            <div class="article-title">${currentAd.title}</div>
+            <div class="article-author">${currentAd.author}</div>
         `;
-        articles[1].after(adCard);
+
+        articles[i].after(adCard);
+
         adCard.onclick = (e) => {
             e.stopPropagation();
-            triggerAd('native-feed-ad');
-            window.open('https://google.com', '_blank');
+            triggerAd('ad-' + currentAd.title.replace(/\s+/g, '-').toLowerCase());
+            window.open(currentAd.url, '_blank');
         };
+
+        adCounter++; // On passe à la pub suivante pour le prochain emplacement
     }
 };
 
