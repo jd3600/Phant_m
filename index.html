@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phant_m</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="logo-container">
+                    <img src="logo.svg" alt="Phant_m Logo" class="logo-img">
+                    <div class="logo-text">Phant_m</div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home" class="nav-link active"><i class="bi bi-house"></i> Accueil</a></li>
+                        <li><a href="#articles" class="nav-link"><i class="bi bi-file-earmark-text"></i> Articles</a></li>
+                        <li><a href="#contact" class="nav-link"><i class="bi bi-envelope"></i> Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <footer class="sidebar-footer">
+                <a href="#legal" id="legal-link" style="font-size: 0.8rem; opacity: 0.6; text-decoration: none; color: inherit; display: block; margin-bottom: 15px;">Mentions Légales</a>
+                
+                <div class="ad-sidebar-container" style="padding: 10px; border: 1px dashed #d7e3fc; border-radius: 12px; background: #fafafa; text-align: center; cursor: pointer;" onclick="triggerAd('sidebar-adsense')">
+                    <small style="font-size: 0.6rem; color: #bbb; text-transform: uppercase;">Publicité</small>
+                    <div style="height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #888;">
+                        <i class="bi bi-aspect-ratio" style="font-size: 1.2rem;"></i>
+                        <span style="font-size: 0.7rem;">Sponsor Local</span>
+                    </div>
+                </div>
+            </footer>
+        </aside>
+
+        <main class="content">
+            <canvas id="hero-canvas"></canvas>
+
+            <section id="home" class="page active">
+                <div class="hero-content">
+                    <h1>Bienvenue</h1>
+                    <div class="grid">
+                        <div class="card">
+                            <h3>Algèbre</h3>
+                            <p>L'étude des structures mathématiques et de leurs relations.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Meta</h3>
+                            <p>Explorer au-delà des limites établies.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="articles" class="page">
+                <h1>Articles</h1>
+                <div class="articles-list">
+                    <div class="article-item" data-slug="horizon-numerique">
+                        <div class="article-meta">07 Février 2026</div>
+                        <div class="article-title">Horizon 2.0</div>
+                        <div class="article-author">Phant_m Core</div>
+                        <div class="full-article-content" style="display:none;">
+                            <h3>Au-delà de la Grille</h3>
+                            <p>Le futur est indicatif.</p>
+                        </div>
+                    </div>
+
+                    <div class="article-item" data-slug="le-silence-du-code">
+                        <div class="article-meta">06 Février 2026</div>
+                        <div class="article-title">L'Équilibre du Vide</div>
+                        <div class="article-author">Anonyme</div>
+                        <div class="full-article-content" style="display:none;">
+                            <h3>Le Silence entre les Lignes</h3>
+                            <p>En algèbre comme en design, le vide a une valeur.</p>
+                        </div>
+                    </div>
+
+                    <div class="article-item" data-slug="Mr.X">
+                        <div class="article-meta">9,85 %</div>
+                        <div class="article-title">@.temp</div>
+                        <div class="article-author">Mr.X</div>
+                        <div class="full-article-content" style="display:none;">
+                            <h3>Le Vortex Cognitif</h3>
+                            <p>La visualition transporte quelque chose</p>
+                        </div>
+                    </div>
+
+                    <div class="article-item" data-slug="baron-nosferatu">
+                        <div class="article-meta">04 Février 2026</div>
+                        <div class="article-title">Architecture Phant_m</div>
+                        <div class="article-author">Baron Nosferatu</div>
+                        <div class="full-article-content" style="display:none;">
+                            <h3>La Géométrie de la Liberté</h3>
+                            <p>L'esthétique de <strong>Phant_m</strong> s'inspire du concept de la Libre Pensée...</p>
+                        </div>
+                    </div>
+
+                    <div class="article-item" data-slug="Nativ">
+                        <div class="article-meta">18 Mars 2155</div>
+                        <div class="article-title">Memento</div>
+                        <div class="article-author">Nativ</div>
+                        <div class="full-article-content" style="display:none;">
+                            <h3>Connexion Temporelle</h3>
+                            <p>Un message venu du futur. Nativ explore les liens qui subsistent entre 2026 et 2155.</p>
+                        </div>
+                    </div>
+
+                    <div class="article-item" data-slug="JeanDoe">
+                        <div class="article-meta">18 Janvier 2026</div>
+                        <div class="article-title">Algèbre Linéaire</div>
+                        <div class="article-author">Jean Doe</div>
+                        <div class="full-article-content" style="display:none;">
+                            <h3>Matrices et Vecteurs</h3>
+                            <p>Introduction aux fondements mathématiques de l'espace vectoriel.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="legal-content" style="display:none;">
+                    <h3>Politique de Confidentialité & Mentions Légales</h3>
+                    <p><strong>Éditeur :</strong> Le site Phant_m est un projet expérimental dédié à la Creator Economy.</p>
+                    <p><strong>Confidentialité :</strong> Nous utilisons des cookies pour améliorer votre expérience via <strong>Google AdSense</strong>.</p>
+                    <p><strong>Contact :</strong> contact@phantm.com</p>
+                </div>
+            </section>
+
+            <section id="contact" class="page">
+                <h1>Contact</h1>
+                <div class="contact-info">
+                    <div class="card" style="max-width: 400px;">
+                        <p><i class="bi bi-envelope-at" style="color: #28a745; margin-right: 10px;"></i> <strong>Email:</strong> <a href="mailto:contact@phantm.com" style="color: inherit; text-decoration: none;">contact@phantm.com</a></p>
+                        <p><i class="bi bi-twitter-x" style="color: #28a745; margin-right: 10px;"></i> <strong>Twitter / X:</strong> <a href="https://twitter.com/@BaronNosferatu" target="_blank" style="color: inherit; text-decoration: none;">@BaronNosferatu</a></p>
+                        <p><i class="bi bi-telephone" style="color: #28a745; margin-right: 10px;"></i> <strong>Téléphone:</strong> +687 71.75.53</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="admin-stats" class="page">
+    <h1>Tableau de Bord Phant_m</h1>
+    <div class="card">
+        <h3>Statistiques d'Ouverture</h3>
+        <div id="stats-display" style="font-family: monospace; background: #f4f4f4; padding: 20px; border-radius: 8px; margin-top: 15px;">
+            </div>
+        <button onclick="localStorage.clear(); location.reload();" style="margin-top:20px; color: red; background: none; border: 1px solid red; padding: 5px 10px; cursor:pointer; border-radius: 5px;">
+            Réinitialiser mes stats
+        </button>
+    </div>
+</section>
+
+            <div id="article-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div id="modal-body">
+                        <div class="article-meta" id="modal-date"></div>
+                        <h2 id="modal-title"></h2>
+                        <div class="article-author" id="modal-author"></div>
+                        <hr class="modal-divider">
+                        <div class="modal-text">
+                            <p>Initialisation du flux de données...</p>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="modal-action-btn like-btn" title="Like"><i class="bi bi-heart"></i></button>
+                            <button class="modal-action-btn second-like-btn" title="J'aime"><i class="bi bi-hand-thumbs-up"></i></button>
+                            <button class="modal-action-btn share-btn" title="Discussion"><i class="bi bi-chat-dots"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="pub-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:10000; flex-direction:column; justify-content:center; align-items:center; color:white;">
+        <div style="width:336px; height:280px; background:#fff; color:#000; display:flex; justify-content:center; align-items:center; border-radius:10px;">
+            <div style="text-align:center;">
+                <i class="bi bi-graph-up-arrow" style="font-size: 2rem; color: #28a745;"></i>
+                <p><b>Zone Publicitaire</b></p>
+                <small>AdSense Placeholder</small>
+            </div>
+        </div>
+        <p style="margin-top:20px; cursor:pointer; text-decoration:underline;" onclick="document.getElementById('pub-overlay').style.display='none'">
+            Continuer vers l'article
+        </p>
+    </div>
+<footer class="mobile-only-footer" style="padding: 20px; text-align: center; border-top: 1px solid #eee; margin-top: 50px;">
+    <a href="#" id="legal-link-mobile" style="color: #28a745; font-size: 0.9rem; text-decoration: none; font-weight: bold;">
+        Mentions Légales
+    </a>
+</footer>
+    <script src="main.js" defer></script>
+</body>
+</html>
